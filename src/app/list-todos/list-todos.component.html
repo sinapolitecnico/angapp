@@ -1,19 +1,26 @@
-<table border="1">
-    <caption>my todos</caption>
+<h1>My todos</h1>
+<div class="container">
+<table class="table">
+    
 <thead>
     <tr>
         <th>id</th>
-        <th>Name</th>
+        <th>description</th>
+        <th>done</th>
+        <th>targetdate</th>
 
     </tr>
 </thead>
 <tbody>
     <tr *ngFor="let t of todos">
         <td>{{t.id}}</td>
-        <td>{{t.sname}}</td>
+        <td>{{t.description}}</td>
+        <td>{{t.done}}</td>
+        <td>{{t.targetdate | date}}</td>
 
     </tr>
 </tbody>
 
 
 </table>
+</div>
