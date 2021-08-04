@@ -4,15 +4,15 @@
         <div><a routerLink="" class="navbar-brand">SINA</a></div>
 
         <ul class="navbar-nav">
-            <li><a routerLink="/welcome/sina" class="nav-link">Home</a></li>
-            <li><a routerLink="/todos" class="nav-link">Todos</a></li>
+            <li><a *ngIf="authen.isuserloggedin()"  routerLink="/welcome/sina" class="nav-link">Home</a></li>
+            <li><a *ngIf="authen.isuserloggedin()"  routerLink="/todos" class="nav-link">Todos</a></li>
         </ul>
 
 
 
         <ul class="navbar-nav navbar-collapse justify-content-end" >
-            <li><a routerLink="/login" class="nav-link">Login</a></li>
-            <li><a routerLink="/login" class="nav-link">Logout</a></li>
+            <li><a *ngIf="!authen.isuserloggedin()" routerLink="/login" class="nav-link">Login</a></li>
+            <li><a *ngIf="authen.isuserloggedin()"  routerLink="/logout" class="nav-link">Logout</a></li>
             
 
 

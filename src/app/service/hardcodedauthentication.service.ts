@@ -11,11 +11,10 @@ export class HardcodedauthenticationService {
 
 authenticate(username:string,password:string):boolean{
     
-    console.log('before '+this.isuserloggedin())
+   
   if(username==="sina" && password!=""){
     
-    sessionStorage.setItem('authentuicateduser',username);
-    console.log('after '+this.isuserloggedin())
+    sessionStorage.setItem('authenticateduser',username);
     
     return true;
   }else{
@@ -24,9 +23,12 @@ authenticate(username:string,password:string):boolean{
 }
 
 isuserloggedin(){
-    let user=sessionStorage.getItem('authentuicateduser');
-    console.log(user+' ppppppppooooo')
+    let user=sessionStorage.getItem('authenticateduser');
     return !(user===null)
+}
+
+logout(){
+  sessionStorage.removeItem('authenticateduser');
 }
 
 

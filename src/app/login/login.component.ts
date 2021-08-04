@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   
      if(this.autservice.authenticate(this.username,this.password)){
        this.check=false;
+       this.router.navigate(['welcome',this.username])
     }else{
       this.check=true
     }
